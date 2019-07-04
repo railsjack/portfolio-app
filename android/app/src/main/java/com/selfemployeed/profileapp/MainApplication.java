@@ -1,4 +1,4 @@
-package com.invertase.rnfirebasestarter;
+package com.selfemployeed.profileapp;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
@@ -11,7 +11,6 @@ import com.facebook.soloader.SoLoader;
 
 import io.invertase.firebase.RNFirebasePackage;
 // optional packages - add/remove as appropriate
-import io.invertase.firebase.admob.RNFirebaseAdMobPackage;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.config.RNFirebaseRemoteConfigPackage;
@@ -45,7 +44,6 @@ public class MainApplication extends Application implements ReactApplication {
         new MainReactPackage(),
         new RNFirebasePackage(),
         // add/remove these packages as appropriate
-        new RNFirebaseAdMobPackage(),
         new RNFirebaseAnalyticsPackage(),
         new RNFirebaseAuthPackage(),
         new RNFirebaseRemoteConfigPackage(),

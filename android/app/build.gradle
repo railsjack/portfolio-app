@@ -109,7 +109,7 @@ android {
   buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
-    applicationId "com.invertase.rnfirebasestarter"
+    applicationId "com.selfemployeed.profileapp"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode 1
@@ -128,10 +128,19 @@ android {
       include "armeabi-v7a", "x86"
     }
   }
+  signingConfigs {
+    myConfig{
+      storeFile file("../keystores/jinnahrae.keystore")
+      storePassword "akffjro123"
+      keyAlias "jinnahrae_alias"
+      keyPassword "akffjro123"
+    }
+  }
   buildTypes {
     release {
       minifyEnabled enableProguardInReleaseBuilds
       proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+      signingConfig signingConfigs.myConfig
     }
     debug {
       minifyEnabled false
@@ -172,12 +181,6 @@ dependencies {
   /* -------------------------
    *   OPTIONAL FIREBASE SDKS
    * ------------------------- */
-
-  implementation('com.google.firebase:firebase-ads:15.0.1') {
-    // exclude `customtabs` as the support lib version is out of date
-    // we manually add it as a dependency below with a custom version
-    exclude group: 'com.android.support', module: 'customtabs'
-  }
 
   // Authentication
   implementation "com.google.firebase:firebase-auth:16.1.0"

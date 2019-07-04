@@ -1,0 +1,1 @@
+call gradlew.bat -x lint -x lintRelease --warning-mode none :app:assembleRelease
